@@ -155,8 +155,8 @@
 
   <section class="screen active" id="s1">
     <h1>Ka haal ba, Anjali? 🌷</h1>
-    <p>I made something small for you.<br>It'll only take a minute 🎀</p>
-    <p class="bihar">for the sweetest girl from Bihar 🌾<br>(Bihar's most dramatic bear sends pranam 🙏)</p>
+    <p>Hum tohara khaatir kuch chhota sa aur khaas banawले bani 🥺💗.<br>It'll only take a minute 🎀</p>
+    <p class="bihar">For sabse pyaari ladki khaatir 🌾💗<br>(Moti budhi ki aur se pranam 🙏)</p>
     <br>
     <button id="start" class="pulse">Open 🎁</button>
     <p class="hint">tap 🎵 at the top corner to play music</p>
@@ -193,21 +193,21 @@
 <script>
 /* ============ EDIT THESE ============ */
 const HER_NAME = "Anjali";
-const MY_NAME  = "Your Name";   // <- write your name here
-const PHONE    = "";               // optional: "919876543210" (with country code, no +)
+const MY_NAME  = "Lakshay";   // <- write your name here
+const PHONE    = "+919560334247";               // optional: "919876543210" (with country code, no +)
 
 const LETTER = [
-  "Anjali, I know you're upset and hurt, and seeing you like this really breaks my heart 🥺",
-  "Let me say one thing clearly: I have not cheated on you, and I never would. This is a misunderstanding 🌸",
-  "I'm not asking you to just believe me right now. I only want you to hear me out calmly, and I'll listen to everything you have to say too 👂",
-  "Please give me just 5 minutes to explain. Without you everything feels bekaar, even litti-chokha tastes boring 🥺💗"
+  "Anjali, hum jaanataani ki tu humse naaraaz badu aur tohara dil dukhal ba. Tohke aisan dekh ke hamaro dil bahut dukhela 🥺",
+"Ek baat saaf-saaf kahal chahataani: hum tohke kabhi dhokha naikhi dele, aur na kabhi dehab. Ee sab humni ke beech ek galatfahmi ba 🌸",
+"Hum ee na kahataani ki tu abhiye hamaar baat maan la. Bas etna chahataani ki tu ek ber shaanti se hamaar baat sun la. Tohra man mein je kuch ba, hum sab kuch dhyaan se sunab 👂",
+"Bas paanch minute de da, apni baat samjhawe khaatir. Tohra bina sab kuch bekaar lagela, hatta ki Ghewar-o ab neek na lagela 🥺💗"
 ];
 
 const PROMISES = [
-  "🧸 I'll tell you the whole truth",
-  "👂 I'll listen without interrupting",
-  "🌷 I'll stay calm and honest with you",
-  "🍲 Litti chokha treat is on me"
+"🧸 Hum tohse har baat sach-sach bataib",
+"👂 Tohar poora baat bina beech mein tokle sunab",
+"🌷 Hum shaant rahab aur tohse hamesha sach bolab",
+"🍲 Momos aur Gol-gappe ke treat hamaar taraf se"
 ];
 /* ==================================== */
 
@@ -257,8 +257,10 @@ function showToast(msg){
   clearTimeout(showToast.t); showToast.t = setTimeout(() => t.style.display = 'none', 6000);
 }
 if (SONG_FILE) {
-  audio = new Audio(SONG_FILE); audio.loop = true;
-  audio.onplay = () => setBtn(true); audio.onpause = () => setBtn(false);
+  audio = new Audio(SONG_FILE); 
+  audio.loop = true;
+  audio.onplay = () => setBtn(true); 
+  audio.onpause = () => setBtn(false);
   audio.onerror = () => showToast('Could not load the song file 🎵');
 } else {
   const tag = document.createElement('script');
@@ -306,7 +308,7 @@ bear.onclick = () => {
   bear.style.animation = 'none'; void bear.offsetWidth; bear.style.animation = '';
 };
 
-$('#start').onclick = () => { show('#s2'); mood('sad', "Please read till the end 🥺"); renderLetter(); };
+$('#start').onclick = () => { show('#s2'); playSong(); mood('sad', "Please read till the end 🥺"); renderLetter(); };
 
 let page = 0;
 const dots = $('#dots');
